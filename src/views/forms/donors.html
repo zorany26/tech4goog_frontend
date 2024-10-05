@@ -14,23 +14,24 @@
   <link href="../../../assets/styles/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="m-5">
   <h1 class="text-center">GESTIONAR DONADOR</h1>
-  <form>
-    <div class="input-group flex-nowrap">
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <form class="w-50">
+    <div class="input-group flex-nowrap mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person"></i></span>
-      <input type="text" class="form-control" placeholder="Nombre de donador" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Nombre de donador" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
-    <div class="input-group flex-nowrap">
+    <div class="input-group flex-nowrap mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-file-earmark-text"></i> </span>
-      <input type="number" class="form-control" placeholder="Número de identificación" aria-label="Username"
+      <input type="number" class="form-control border-primary" placeholder="Número de identificación" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
 
-    <div class="input-group">
+    <div class="input-group mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-tag"></i></span>
-      <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+      <button type="button" class="btn btn-outline-secondary border-primary dropdown-toggle dropdown-toggle-split"
         data-bs-toggle="dropdown" aria-expanded="false">
         <span class="visually-hidden">Toggle Dropdown</span>
       </button>
@@ -38,33 +39,36 @@
         <li><a class="dropdown-item" href="#">Empresa</a></li>
         <li><a class="dropdown-item" href="#">Persona natural</a></li>
       </ul>
-      <input type="text" class="form-control" placeholder="tipo donador" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="tipo donador" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
 
-    <div class="input-group flex-nowrap">
+    <div class="input-group flex-nowrap mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-envelope"></i></span>
-      <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Username"
+      <input type="email" class="form-control border-primary" placeholder="Correo electrónico" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
-    <div class="input-group flex-nowrap">
+    <div class="input-group flex-nowrap mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-telephone"></i></span>
-      <input type="tel" class="form-control" placeholder="Número telefono" aria-label="Username"
+      <input type="tel" class="form-control border-primary" placeholder="Número telefono" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
-    <div class="input-group flex-nowrap">
+    <div class="input-group flex-nowrap mb-4">
       <span class="input-group-text" id="addon-wrapping"> <i class="bi bi-house"></i></span>
-      <input type="text" class="form-control" placeholder="Dirección de donador" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Dirección de donador" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
-    <div class="input-group flex-nowrap">
+    <div class="input-group flex-nowrap mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-building"></i></span>
-      <input type="text" class="form-control" placeholder="Ciudad" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Ciudad" aria-label="Username"
         aria-describedby="addon-wrapping">
     </div>
-    <button type="submit" class="btn btn-success" onclick="">Enviar</button>
+    <div class="container text-center">
+      <button type="submit" class="colorOrange mt-2 w-25" onclick="">Enviar</button>
+    </div>
 
   </form>
+  </div>
 
 
 

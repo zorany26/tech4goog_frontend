@@ -14,84 +14,86 @@
     <link href="../../../assets/styles/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="m-5">
     <h1 class="text-center">GESTINAR ORGANIZACION BENEFICIADA</h1>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
     <form>
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap mb-4">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-search"></i></span>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control border-primary"
                 placeholder="Buscar organización beneficiada por número de identificación" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
 
-        <div class="input-group flex-nowrap">
-            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-building"></i></span>
-            <input type="text" class="form-control" placeholder="Nombre de Organización" aria-label="Username"
+        <div class="input-group flex-nowrap  mb-4">
+            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-people"></i></span>
+            <input type="text" class="form-control border-primary" placeholder="Nombre de Organización" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
 
-        <div class="input-group">
+        <div class="input-group  mb-4">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-tags"></i></span>
-            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+            <button type="button" class="btn btn-outline-secondary border-primary dropdown-toggle dropdown-toggle-split"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <span class="visually-hidden">Toggle Dropdown</span>
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu  mb-4">
                 <li><a class="dropdown-item" href="#">Colegio</a></li>
                 <li><a class="dropdown-item" href="#">Junta de accion comunal</a></li>
                 <li><a class="dropdown-item" href="#">Iglesia</a></li>
             </ul>
-            <input type="text" class="form-control" placeholder="tipo organización" aria-label="Username"
+            <input type="text" class="form-control border-primary" placeholder="tipo organización" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
 
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap  mb-4">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-envelope"></i></span>
-            <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Username"
+            <input type="email" class="form-control border-primary" placeholder="Correo electrónico" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap  mb-4">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-telephone"></i></span>
-            <input type="tel" class="form-control" placeholder="Número telefono" aria-label="Username"
+            <input type="tel" class="form-control border-primary" placeholder="Número telefono" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap  mb-4">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person"></i></span>
-            <input type="text" class="form-control" placeholder="Persona de contacto" aria-label="Username"
+            <input type="text" class="form-control border-primary" placeholder="Persona de contacto" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
-        <div class="input-group flex-nowrap">
+        <div class="input-group flex-nowrap  mb-4">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-geo-alt"></i></span>
-            <input type="text" class="form-control" placeholder="Dirección" aria-label="Username"
+            <input type="text" class="form-control border-primary" placeholder="Dirección" aria-label="Username"
                 aria-describedby="addon-wrapping">
         </div>
         <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping"><i class="bi bi-geo"></i></span>
-            <input type="text" class="form-control" placeholder="Ciudad" aria-label="Username"
+            <input type="text" class="form-control border-primary" placeholder="Ciudad" aria-label="Username"
                 aria-describedby="addon-wrapping">
-        </div>
+        </div><br>
 
         <!-- Botón Guardar -->
-        <button type="submit" class="btn btn-success">
+        <button type="submit" class="btn btn-success border-primary">
             <i class="bi bi-save"></i> Guardar
         </button>
 
         <!-- Botón Eliminar -->
-        <button type="button" class="btn btn-danger">
+        <button type="button" class="btn btn-danger border-primary">
             <i class="bi bi-trash"></i> Eliminar
         </button>
 
         <!-- Botón Editar -->
-        <button type="button" class="btn btn-warning">
+        <button type="button" class="btn btn-warning border-primary">
             <i class="bi bi-pencil-square"></i> Editar
         </button>
 
         <!-- Botón Buscar -->
-        <button type="button" class="btn btn-primary">
+        <button type="button" class="btn btn-primary border-primary">
             <i class="bi bi-search"></i> Buscar
         </button>
 
     </form>
+</div>
 
 
 

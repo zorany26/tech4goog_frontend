@@ -3,3 +3,20 @@ nav{
     display: flex;
     justify-content: space-between;
 }
+
+.image-container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+.color{
+    background-color: #fdae38 ;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.colorOrange{
+    background-color: #fdae38;
+    border-radius: 5px;
+    padding: 6px;
+}
