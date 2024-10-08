@@ -20,3 +20,14 @@ nav{
     border-radius: 5px;
     padding: 6px;
 }
+
+
+.nav-visible {
+    visibility:visible; 
+
+}
+.nav-hidden {
+    visibility:hidden; 
+    
+}
+    
