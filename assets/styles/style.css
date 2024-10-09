@@ -21,13 +21,23 @@ nav{
     padding: 6px;
 }
 
-
 .nav-visible {
     visibility:visible; 
+}
 
-}
 .nav-hidden {
-    visibility:hidden; 
-    
+    visibility:hidden;
+    display: none;     
 }
-    
+
+.section-login-hidden{
+    visibility:hidden;
+    display: none;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    left: 50vw;  
+}
