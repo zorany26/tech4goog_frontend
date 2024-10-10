@@ -12,19 +12,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <!-- CSS -->
   <link href="./assets/styles/style.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+    </style>
 
 </head>
 
 <body class="m-5 body-index">
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid nav">
-
+      
       <div class=" d-flex flex-column align-items-md-center">
-      <a class="navbar-brand" href="#">Tech4good</a>
-      <i class="bi bi-pc-display-horizontal"></i>
+        <a class="navbar-brand fw-bold">Tech4good</a>
+        <!-- <i class="bi bi-pc-display-horizontal"></i> -->
+      </div>
+      
+      <div class="nav-visible user-login" onclick="showSection()" id="user-login">
+          <!-- Ícono principal de Login -->
+          <i class="bi bi-lock fs-1 mb-4"></i>
       </div>
 
-      <div class="nav-visible" id="user-options">
+      <div class="nav-hidden" id="user-options">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,35 +68,35 @@
               <a class="nav-link" href="./src/views/forms/deliveryAct.html">Entregas</a>
             </li>
             <li class="nav-item">
-                      <a class="nav-link" href="#">Nuestros beneficiados</a>
+                      <a class="nav-link" href="./src/views/forms/beneficiaryOrganizationList.html">Nuestros beneficiados</a>
                   </li>
           </ul>
         </div>
       </div>
+
     </div>
   </nav>
+
   <div class="img-center">
     <img src="./assets/img/1.jpeg" alt="charlaOng">
   </div>
 
-  <section class="section-login" id="section-login">
+  <section class="section-login-hidden" id="section-login">
     <div class="image-container">
         <img src="./assets/img/niños_portada.jfif" width="150px" height="150px" alt=" niños_portada">
     </div>
 
     <!-- copiar usuario y contraseña de bootstrap -->
 
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-4 text-center">
-          <!-- Ícono principal de Login -->
-          <i class="bi bi-lock fs-1 mb-4"></i>
+    <div class="container-fluid">
+      <div class="row justify-content-center p-2">
+        <div class="col-10  text-center">          
           <h3>Iniciar Sesión</h3>
           <!-- para el backend -->
           <form >
             <!-- Usuario -->
             <div class="mb-3">
-              <label for="username" class="form-label">Usuario</label>
+              <!-- <label for="username" class="form-label">Usuario</label> -->
               <div class="input-group">
                 <span class="input-group-text"><i class="bi bi-person"></i></span>
                 <input type="text" class="form-control border-primary" id="username" name="username" placeholder="Ingresa tu usuario"
@@ -98,7 +106,7 @@
 
             <!-- Contraseña -->
             <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
+              <!-- <label for="password" class="form-label">Contraseña</label> -->
               <div class="input-group">
                 <span class="input-group-text"><i class="bi bi-lock"></i></span>
                 <input type="password" class="form-control border-primary" id="password" name="password"
@@ -117,7 +125,7 @@
     </div>
   </section>
 
-  <footer class="bg-light text-center text-lg-start mt-5">
+  <footer class="text-center text-lg-start mt-5">
     
     <!--quienes desarrollaron  -->
 
@@ -132,14 +140,11 @@
   </div>
   </footer>
 
-  <script src="./src/services/service.js">
-  </script>
+  <script src="./src/services/service.js"></script>
   <script src="./src/controllers/controller.js"></script>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-
 </body>
 
 </html>

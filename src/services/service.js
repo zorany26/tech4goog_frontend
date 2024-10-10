@@ -1,3 +1,80 @@
+async function listAllBeneficiaryOrganization() {
+    await getAllBeneficiaryOrganizations().then( (response) => {
+        console.log("response:");
+        console.log(response);
+        let tableTag = document.createElement("article");
+        let tableHeader =
+                        "<table class='table'>"+
+                            "<thead>"+
+                                "<tr>"+
+                                    "<th scope='col'>ID</th>"+
+                                    "<th scope='col'>Nombre de Organización</th>"+
+                                    "<th scope='col'>Número de identificación</th>"+
+                                    "<th scope='col'>Tipo organización</th>"+
+                                    "<th scope='col'>Persona de contacto</th>"+
+                                    "<th scope='col'>Número teléfono</th>"+
+                                "</tr>"+
+                            "</thead>"+
+                            "<tbody class='table-group-divider'>";
+        let tableClose = 
+                            "</tbody>"+
+                        "</table>" ;
+        let tableBody ='';
+            for (let i = 0; i < response.length; i++) {
+                tableBody+= "<tr>"+
+                                "<td>"+response[i]['idOrganization']+"</td>"+
+                                "<td>"+response[i]['nameOrganization']+"</td>"+
+                                "<td>"+response[i]['identificationNumber']+"</td>"+
+                                "<td>"+response[i]['organizationType']+"</td>"+
+                                "<td>"+response[i]['contactPerson']+"</td>"+
+                                "<td>"+response[i]['phoneNumber']+"</td>"+
+                            "</tr>";                
+            }
+        
+        tableTag.innerHTML = tableHeader + tableBody + tableClose; 
+        document.getElementById("beneficiaryOrganization-table").appendChild(tableTag);
+    } );
+}
+
+async function createBeneficiaryOrganizationBtn() {
+    let beneficiaryOrganization = {};
+
+    beneficiaryOrganization.nameOrganization = document.getElementById("beneficiaryOrganization-nameOrganization").value;
+    beneficiaryOrganization.identificationNumber = document.getElementById("beneficiaryOrganization-identificationNumber").value;
+    beneficiaryOrganization.email = document.getElementById("beneficiaryOrganization-email").value;
+    beneficiaryOrganization.phoneNumber = document.getElementById("beneficiaryOrganization-phoneNumber").value;
+    beneficiaryOrganization.addressOrganization = document.getElementById("beneficiaryOrganization-addressOrganization").value;
+    beneficiaryOrganization.city = document.getElementById("beneficiaryOrganization-city").value;
+    beneficiaryOrganization.contactPerson = document.getElementById("beneficiaryOrganization-contactPerson").value;
+    beneficiaryOrganization.organizationType = document.getElementById("beneficiaryOrganization-organizationType").value;
+
+    console.log(beneficiaryOrganization);
+
+    let values = Object.values(beneficiaryOrganization);
+    let keys = Object.keys(beneficiaryOrganization);
+    let objectFull = false;    
+    for (let i = 0; i < values.length; i++) {
+        if (values[i] == '') {
+            console.log("El campo: "+keys[i]+" esta vació. Diligencia  este campo para poder continuar.");
+            objectFull = false;
+            break;
+        } else{
+            objectFull = true;
+        }       
+    }
+    if (objectFull) {
+        await createBeneficiaryOrganization(beneficiaryOrganization).then((response) => {
+            console.log("response:");
+            console.log(response);
+            if(response == true){
+                 console.log("Ha sido creada la organización: "+beneficiaryOrganization.nameOrganization);
+                 document.getElementById("beneficiaryOrganization-form").reset();                 
+            }
+        });        
+    }
+    
+}
+
 async function updateBeneficiaryOrganizationBtn() {
     let oldIdentificationNumber = document.getElementById("beneficiaryOrganization-identificationNumber").value;
     let newIdentificationNumber;
@@ -20,22 +97,21 @@ async function updateBeneficiaryOrganizationBtn() {
         console.log("response:");
         console.log(response);
         if(response == true){
-            cleanBeneficiaryOrganizationForm();
+            disableBeneficiaryOrganizationForm();
             document.getElementById("btn-save").setAttribute("disabled", "true");
             document.getElementById("btn-delete").setAttribute("disabled", "true");
             document.getElementById("btn-edit").setAttribute("disabled", "true");
 
             alert("Ha sido actualizada la organización indicada: ");
         }
-    })
+    });
 
 }
-
 
 async function deleteBeneficiaryOrganizationBtn() {
     await deleteBeneficiaryOrganization(document.getElementById("beneficiaryOrganization-identificationNumber").value).then((response) => {
         if(response != null){
-            cleanBeneficiaryOrganizationForm();
+            disableBeneficiaryOrganizationForm();
 
             alert("Ha sido eliminada la organización indicada: ");
             
@@ -46,7 +122,7 @@ async function deleteBeneficiaryOrganizationBtn() {
     });
 }
 
-function cleanBeneficiaryOrganizationForm() {
+function disableBeneficiaryOrganizationForm() {
             document.getElementById("beneficiaryOrganization-nameOrganization").setAttribute("disabled", "true");            
             document.getElementById("beneficiaryOrganization-email").setAttribute("disabled", "true");
             document.getElementById("beneficiaryOrganization-phoneNumber").setAttribute("disabled", "true");
@@ -56,7 +132,6 @@ function cleanBeneficiaryOrganizationForm() {
             document.getElementById("beneficiaryOrganization-organizationType").setAttribute("disabled", "true");
             document.getElementById("beneficiaryOrganization-identificationNumber").removeAttribute("disabled"); 
 }
-
 
 function editBeneficiaryOrganization() {
     document.getElementById("beneficiaryOrganization-identificationNumber").setAttribute("disabled", "true");
@@ -72,7 +147,6 @@ function editBeneficiaryOrganization() {
     document.getElementById("btn-delete").removeAttribute("disabled");
     document.getElementById("btn-edit").setAttribute("disabled", "true");
 }
-
 
 async function findBeneficiaryOrganization() {
 
@@ -92,7 +166,6 @@ async function findBeneficiaryOrganization() {
         }
     });
 }
-
 
 async function validateCredentials() {
     let currentUser = {
@@ -140,4 +213,9 @@ function hideNav(){
 
 function hideSection(){
     document.getElementById('section-login').className= 'section-login-hidden';                       
+}
+
+function showSection(){
+    document.getElementById('section-login').className= 'section-login';
+    document.getElementById('user-login').className= 'nav-hidden';                       
 }

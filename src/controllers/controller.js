@@ -41,10 +41,17 @@ async function getAllBeneficiaryOrganizations() {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
     },
+  })
+  .then((response) => response.json())
+  .then( (data) => {return data})
+  .catch((error) => {
+    console.log(
+      "Ocurrió un error.\n" + error
+    );
+    return null;
   });
 
-  const beneficiaryOrganizations = await request.json();
-  return beneficiaryOrganizations;
+return request;
 }
 
 async function getBeneficiaryOrganization(identificationNumber) {
@@ -148,4 +155,30 @@ async function deleteBeneficiaryOrganization(identificationNumber) {
   });
 
 return request;
+}
+
+async function createBeneficiaryOrganization( beneficiaryOrganization ) {
+  const request = await fetch(
+      urlapi + "/beneficiarios", {
+          method: "POST",
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(beneficiaryOrganization)
+      }).then((response) => {
+          console.log(response);
+          console.log("Se creo la organización: ");
+          console.log(response['status']);      
+          console.log(typeof response['status']);      
+      if( response['status'] == 201)
+          return true;
+      }).catch((error) => {
+          console.log(
+            "Ocurrió un error.\n"+ error
+          );
+          return null;
+        });
+      
+      return request;
 }

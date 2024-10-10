@@ -20,7 +20,7 @@
 
       <div class=" d-flex flex-column align-items-md-center">
       <a class="navbar-brand" href="../../../index.html">Tech4good</a>
-      <i class="bi bi-pc-display-horizontal"></i>
+      <!-- <i class="bi bi-pc-display-horizontal"></i> -->
       </div>
 
       <div class="nav-visible" id="user-options">
@@ -59,30 +59,30 @@
               <a class="nav-link" href="./deliveryAct.html">Entregas</a>
             </li>
             <li class="nav-item">
-                      <a class="nav-link" href="#">Nuestros beneficiados</a>
+                      <a class="nav-link" href="./beneficiaryOrganizationList.html">Nuestros beneficiados</a>
                   </li>
           </ul>
         </div>
       </div>
     </div>
   </nav>
-  <h1 class="text-center ">INGRESAR ORGANIZACION BENEFICIARIA</h1>
+  <h1 class="text-center ">INGRESAR ORGANIZACIÓN BENEFICIARIA</h1>
   <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-  <form class="w-50">
+  <form class="w-50" id="beneficiaryOrganization-form">
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-people"></i></span>
-      <input type="text" class="form-control border-primary" placeholder="Nombre de Organización" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Nombre de Organización" id="beneficiaryOrganization-nameOrganization" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-card-text"></i></span>
-      <input type="number" class="form-control border-primary" placeholder="Número de identificación" aria-label="Username"
+      <input type="number" class="form-control border-primary" placeholder="Número de identificación" id="beneficiaryOrganization-identificationNumber" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
 
     <div class="input-group  mb-4">
-      <span class="input-group-text" id="addon-wrapping"><i class="bi bi-tags"></i></span>
-      <button type="button" class="btn btn-outline-secondary border-primary dropdown-toggle dropdown-toggle-split"
+      <span class="input-group-text" id="addon-wrapping"><i class="bi bi-building"></i></span>
+      <!-- <button type="button" class="btn btn-outline-secondary border-primary dropdown-toggle dropdown-toggle-split"
         data-bs-toggle="dropdown" aria-expanded="false">
         <span class="visually-hidden">Toggle Dropdown</span>
       </button>
@@ -90,43 +90,49 @@
         <li><a class="dropdown-item" href="#">Colegio</a></li>
         <li><a class="dropdown-item" href="#">Junta de accion comunal</a></li>
         <li><a class="dropdown-item" href="#">Iglesia</a></li>
-      </ul>
-      <input type="text" class="form-control border-primary" placeholder="tipo organización" aria-label="Username"
-        aria-describedby="addon-wrapping">
+      </ul> -->
+            <select class="form-control border-primary" id="beneficiaryOrganization-organizationType" placeholder="Tipo organización" aria-label="Username" required
+                aria-describedby="addon-wrapping">
+                <option class="dropdown-item" selected hidden>Tipo organización</option>
+                <option class="dropdown-item" value="Colegio">Colegio</option>
+                <option class="dropdown-item" value="Junta de acción comunal">Junta de acción comunal</option>
+                <option class="dropdown-item" value="Iglesia">Iglesia</option>                
+            </select>
     </div>
 
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-envelope"></i></span>
-      <input type="email" class="form-control border-primary" placeholder="Correo electrónico" aria-label="Username"
+      <input type="email" class="form-control border-primary" placeholder="Correo electrónico" id="beneficiaryOrganization-email" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-telephone"></i></span>
-      <input type="tel" class="form-control border-primary" placeholder="Número telefono" aria-label="Username"
+      <input type="tel" class="form-control border-primary" placeholder="Número teléfono" id="beneficiaryOrganization-phoneNumber" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person"></i></span>
-      <input type="text" class="form-control border-primary" placeholder="Persona de contacto" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Persona de contacto" id="beneficiaryOrganization-contactPerson" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-geo-alt"></i></span>
-      <input type="text" class="form-control border-primary" placeholder="Dirección" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Dirección" id="beneficiaryOrganization-addressOrganization" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
     <div class="input-group flex-nowrap  mb-4">
       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-geo"></i></span>
-      <input type="text" class="form-control border-primary" placeholder="Ciudad" aria-label="Username"
+      <input type="text" class="form-control border-primary" placeholder="Ciudad" id="beneficiaryOrganization-city" aria-label="Username" required
         aria-describedby="addon-wrapping">
     </div>
     <div class="container text-center mt-2">
-    <button type="submit" class="colorOrange mt-2 w-25" onclick="">Enviar</button>
+    <button type="button" class="colorOrange mt-2 w-25" onclick="createBeneficiaryOrganizationBtn()">Enviar</button>
   </div>
   </form>
 </div>
 
-
+  <script src="../../services/service.js"></script>
+  <script src="../../controllers/controller.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
